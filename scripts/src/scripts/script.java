@@ -10,9 +10,9 @@ import java.util.StringTokenizer;
 
 public class script {
 	
-	private BufferedReader br;
+	private static BufferedReader br;
 	
-	public void extractInFile(String path) {
+	public static void extractInFile(String path) {
 		try {
 			br = new BufferedReader(new FileReader(path));
 			String line ="";
@@ -27,7 +27,7 @@ public class script {
 			System.out.println(e.getMessage());
 		}
 	}
-	public void token(String line) {
+	public static void token(String line) {
 		StringTokenizer token = new StringTokenizer(line, "#");
 		while(token.hasMoreTokens()) {
 			String result = token.nextToken();
@@ -35,7 +35,7 @@ public class script {
 			writeIntoTheNewFile(result);
 		}
 	}
-	public void writeIntoTheNewFile(String result) {
+	public static void writeIntoTheNewFile(String result) {
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter("./ficheros/valor.txt"));
 			bw.write(result);
@@ -47,6 +47,6 @@ public class script {
 		
 	}
 	public static void main(String[] args) {
-		
+		extractInFile("./ficheros/fichero.txt");
 	}
 }
