@@ -31,12 +31,14 @@ public class script {
 		StringTokenizer token = new StringTokenizer(line, "#");
 		while(token.hasMoreTokens()) {
 			String result = token.nextToken();
-			System.out.println(result);
+			
 			writeIntoTheNewFile(result);
+			
 		}
 	}
 	public static void writeIntoTheNewFile(String result) {
 		try {
+			System.out.println(result);
 			BufferedWriter bw = new BufferedWriter(new FileWriter("./ficheros/valor.txt"));
 			bw.write(result);
 			bw.close();
