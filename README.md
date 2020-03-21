@@ -1,4 +1,3 @@
 # scripts
 
-#Corregir el metodo 
-#saveSql del script saveInjection.py
+Corregir el metodo saveSql del script saveInjection.py
